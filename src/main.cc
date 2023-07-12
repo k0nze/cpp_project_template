@@ -73,8 +73,8 @@ int main(int argc, char** argv) {
         return h0 ^ h1;
     };
 
-    std::unordered_map<key_type, int, decltype(hash), decltype(equal)> m(8, hash,
-                                                                         equal);
+    auto m = std::unordered_map<key_type, int, decltype(hash), decltype(equal)>(8, hash,
+                                                                                equal);
 
     auto a0 = std::make_shared<Animal>("a");
     auto a1 = std::make_shared<Animal>("a");
